@@ -20,9 +20,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
 }
 
-//test {
-//    useJUnit()
-//}
+test {
+    useJUnit()
+}
 
 configurations {
     cucumberRuntime {
