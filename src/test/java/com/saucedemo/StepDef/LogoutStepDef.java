@@ -1,4 +1,4 @@
-package StepDef;
+package com.saucedemo.StepDef;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

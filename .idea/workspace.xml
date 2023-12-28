@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c19353dc-755f-4ccf-8ef8-115d5c348e3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/test-report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/azriani/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CucumberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDef/Checkout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDef/LoginStepDef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/StepDef/LogoutStepDef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Checkout.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Logout.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/StepDef/CheckoutStepDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/StepDef/CucumberHooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/StepDef/HomePageStepDef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/pages/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/CucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/Checkout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/LoginStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/StepDef/LoginStepDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDef/LogoutStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/saucedemo/StepDef/LogoutStepDef.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +80,7 @@
     "Cucumber Java.Feature: Login.executor": "Run",
     "Cucumber Java.Scenario: Add a product to the cart.executor": "Run",
     "Cucumber Java.Scenario: Checkout an item.executor": "Run",
+    "Cucumber Java.Scenario: Login with invalid username and password.executor": "Run",
     "Cucumber Java.Scenario: Login with valid username and password.executor": "Run",
     "Cucumber Java.Scenario: Logout from the Saucedemo page.executor": "Run",
     "Gradle.Build Saucedemo.executor": "Run",
@@ -96,7 +89,7 @@
     "Gradle.CucumberTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/azria/Saucedemo/src/test/resources",
@@ -111,7 +104,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CucumberTest">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Checkout an item">
     <configuration name="Feature: Checkout" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Checkout.feature" />
@@ -134,7 +127,7 @@
     <configuration name="Scenario: Add a product to the cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Checkout.feature" />
-      <option name="GLUE" value="StepDef" />
+      <option name="GLUE" value="com.saucedemo.StepDef" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Saucedemo.test" />
       <option name="NAME_FILTER" value="^Add a product to the cart$" />
@@ -154,7 +147,7 @@
     <configuration name="Scenario: Checkout an item" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Checkout.feature" />
-      <option name="GLUE" value="StepDef" />
+      <option name="GLUE" value="com.saucedemo.StepDef" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Saucedemo.test" />
       <option name="NAME_FILTER" value="^Checkout an item$" />
@@ -171,15 +164,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Logout from the Saucedemo page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Login with invalid username and password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Logout.feature" />
-      <option name="GLUE" value="StepDef" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Login.feature" />
+      <option name="GLUE" value="com.saucedemo.StepDef" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Saucedemo.test" />
-      <option name="NAME_FILTER" value="^Logout from the Saucedemo page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Logout from the Saucedemo page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Logout from the Saucedemo page" />
+      <option name="NAME_FILTER" value="^Login with invalid username and password$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login with invalid username and password$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Login with invalid username and password" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -191,44 +184,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CucumberTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;CucumberTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+    <configuration name="Scenario: Login with valid username and password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Login.feature" />
+      <option name="GLUE" value="com.saucedemo.StepDef" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Saucedemo.test" />
+      <option name="NAME_FILTER" value="^Login with valid username and password$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login with valid username and password$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Login with valid username and password" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Scenario: Login with invalid username and password" />
+      <item itemvalue="Cucumber Java.Scenario: Login with valid username and password" />
       <item itemvalue="Cucumber Java.Feature: Checkout" />
       <item itemvalue="Cucumber Java.Scenario: Add a product to the cart" />
       <item itemvalue="Cucumber Java.Scenario: Checkout an item" />
-      <item itemvalue="Cucumber Java.Scenario: Logout from the Saucedemo page" />
-      <item itemvalue="Gradle.CucumberTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CucumberTest" />
         <item itemvalue="Cucumber Java.Scenario: Checkout an item" />
-        <item itemvalue="Cucumber Java.Feature: Checkout" />
         <item itemvalue="Cucumber Java.Scenario: Add a product to the cart" />
-        <item itemvalue="Cucumber Java.Scenario: Logout from the Saucedemo page" />
+        <item itemvalue="Cucumber Java.Feature: Checkout" />
+        <item itemvalue="Cucumber Java.Scenario: Login with invalid username and password" />
+        <item itemvalue="Cucumber Java.Scenario: Login with valid username and password" />
       </list>
     </recent_temporary>
   </component>

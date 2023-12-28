@@ -11,4 +11,4 @@ Features:
    - Finish the checkout process
 3. Logout
 
-To execute all features, run class on CucumberTest.java file.
+To execute all features, run class on  file.
