@@ -12,7 +12,7 @@ Feature: Checkout
   Scenario: Checkout an item
     Given The product is added to the cart
     And User click on the Checkout button
-    And User input "First Name", "Last Name", "123456"
+    And User input info details
     When Click the Continue button
     And Click the Finish button
     Then The page shows page "Thank you for your order!"

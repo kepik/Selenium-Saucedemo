@@ -32,6 +32,7 @@ public class CheckoutStepDef extends BaseTest {
     }
     @Given("The product is added to the cart")
     public void theProductIsAddedToTheCart() {
+        checkoutPage = new CheckoutPage(driver);
         checkoutPage.userIsLoggedIn();
         checkoutPage.validateProductInCart();
     }
@@ -40,9 +41,9 @@ public class CheckoutStepDef extends BaseTest {
         checkoutPage.clickCartPage();
 
     }
-    @And("User input {string}, {string}, {string}")
-    public void userInput(String firstName, String lastName, String zipCode) {
-        checkoutPage.inputCustInfo(firstName,lastName,zipCode);
+    @And("User input info details")
+    public void userInputInfoDetails() {
+        checkoutPage.inputCustInfo();
 
     }
     @When("Click the Continue button")

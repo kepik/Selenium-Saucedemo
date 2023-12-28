@@ -20,6 +20,7 @@ public class CheckoutPage {
         By passwordInput = By.id("password");
         By loginButton = By.id("login-button");
 
+        driver.get("https://www.saucedemo.com/");
         driver.findElement(usernameInput).sendKeys("standard_user");
         driver.findElement(passwordInput).sendKeys("secret_sauce");
         driver.findElement(loginButton).click();
@@ -29,7 +30,8 @@ public class CheckoutPage {
         driver.findElement(addProductButton).click();
     }
     public void clickCartPage(){
-        driver.findElement(By.className("shopping_cart_link")).click();
+        By cartButton = By.className("shopping_cart_link");
+        driver.findElement(cartButton).click();
 
     }
     public void validateProductInCart() {
@@ -38,10 +40,13 @@ public class CheckoutPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"item_4_title_link\"]/div")));
         assertEquals("Sauce Labs Backpack", productName.getText());
     }
-    public void inputCustInfo(String firstName, String lastName, String zipCode) {
-        driver.findElement(By.id("first-name")).sendKeys(firstName);
-        driver.findElement(By.id("last-name")).sendKeys(lastName);
-        driver.findElement(By.id("postal-code")).sendKeys(zipCode);
+    public void inputCustInfo() {
+        By fName = By.id("first-name");
+        By lName = By.id("last-name");
+        By pCode = By.id("postal-code");
+        driver.findElement(fName).sendKeys("firstName");
+        driver.findElement(lName).sendKeys("lastName");
+        driver.findElement(pCode).sendKeys("1234");
     }
     public void continueCheckout(){
         driver.findElement(By.id("continue")).click();
