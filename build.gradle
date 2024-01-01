@@ -21,7 +21,8 @@ dependencies {
 }
 
 test {
-    useJUnit()
+    useJUnitPlatform()
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
 }
 
 configurations {
@@ -31,19 +32,19 @@ configurations {
 }
 
 //filter run for specific test on terminal
-def tags =(findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
-task cucumber() {
-    description("Running Cucumber Test")
-    dependsOn assemble, compileTestJava
+def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
+
+tasks.register('runCucumber') {
+    dependsOn assemble, testClasses
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
-                    '--plugin', 'html:reports/test-report.html',
                     '--plugin', 'pretty',
+                    '--plugin', 'html:reports/cucumber.html','json:reports/cucumber.json',
                     '--glue', 'StepDef',
-                    '--tags', "${tags}",
+                    '--tags', "$tags",
                     'src/test/resources'
             ]
         }

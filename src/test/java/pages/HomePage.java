@@ -1,4 +1,4 @@
-package com.saucedemo.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +12,12 @@ public class HomePage {
     By backpackProduct = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
     public HomePage(WebDriver driver) {
         this.driver = driver;
+
     }
 
     public void validateOnHomePage() {
         assertTrue(driver.findElement(backpackProduct).isDisplayed());
+
     }
 
 }

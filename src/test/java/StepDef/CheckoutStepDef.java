@@ -1,23 +1,22 @@
-package com.saucedemo.StepDef;
+package StepDef;
 
-import com.saucedemo.BaseTest;
-import com.saucedemo.pages.CheckoutPage;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import pages.CheckoutPage;
+import io.cucumber.java.en.*;
+import pages.LoginPage;
+import static Utility.BaseTest.*;
 
-public class CheckoutStepDef extends BaseTest {
+public class CheckoutStepDef {
     CheckoutPage checkoutPage;
+    LoginPage loginPage;
 
-    @Given("User is already login")
-    public void userIsAlreadyLogin() {
+    @Given("User is logged in")
+    public void userIsLoggedIn() {
         checkoutPage = new CheckoutPage(driver);
         checkoutPage.userIsLoggedIn();
     }
     @When("User click on the Add to Cart button")
     public void userClickOnTheAddToCartButton() {
-       checkoutPage.addProductToCart();
+        checkoutPage.addProductToCart();
 
     }
     @Then("The product is added into the cart")
@@ -30,21 +29,16 @@ public class CheckoutStepDef extends BaseTest {
         checkoutPage.validateProductInCart();
 
     }
-    @Given("The product is added to the cart")
-    public void theProductIsAddedToTheCart() {
-        checkoutPage = new CheckoutPage(driver);
-        checkoutPage.userIsLoggedIn();
-        checkoutPage.validateProductInCart();
-    }
+
+
     @And("User click on the Checkout button")
     public void userClickOnTheCheckoutButton() {
         checkoutPage.clickCartPage();
-
+        checkoutPage.validateProductInCart();
     }
-    @And("User input info details")
-    public void userInputInfoDetails() {
-        checkoutPage.inputCustInfo();
-
+    @And("User input info details {string}, {string}, {string}")
+    public void userInputInfoDetails(String firstName, String lastName, String zipCode) {
+        checkoutPage.inputCustInfo(firstName,lastName,zipCode);
     }
     @When("Click the Continue button")
     public void clickTheContinueButton() {
@@ -60,4 +54,5 @@ public class CheckoutStepDef extends BaseTest {
     public void thePageShowsPage(String successMsg) {
         checkoutPage.validateSuccessPage(successMsg);
     }
+
 }

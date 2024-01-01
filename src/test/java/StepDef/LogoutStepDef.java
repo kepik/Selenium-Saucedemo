@@ -1,8 +1,7 @@
-package com.saucedemo.StepDef;
+package StepDef;
 
-import com.saucedemo.BaseTest;
-import com.saucedemo.pages.HomePage;
-import com.saucedemo.pages.LogoutPage;
+import Utility.BaseTest;
+import pages.LogoutPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

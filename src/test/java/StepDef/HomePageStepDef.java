@@ -1,10 +1,8 @@
-package com.saucedemo.StepDef;
+package StepDef;
 
-import com.saucedemo.BaseTest;
-import com.saucedemo.pages.HomePage;
+import Utility.BaseTest;
+import pages.HomePage;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

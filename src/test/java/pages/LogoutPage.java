@@ -1,32 +1,26 @@
-package com.saucedemo.pages;
+package pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LogoutPage {
     WebDriver driver;
+    LoginPage loginPage;
     public LogoutPage(WebDriver driver) {
         this.driver = driver;
 
     }
-    By userName = By.id("user-name");
     public void userInHomepage(){
-        driver.get("https://www.saucedemo.com/");
-        driver.findElement(userName).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        loginPage = new LoginPage(driver);
 
-        By homepageProducts = By.xpath("//*[@id=\"header_container\"]/div[2]/span");
-        WebElement productElement = driver.findElement(homepageProducts);
-        assertTrue(productElement.isDisplayed());
-        assertEquals("Products", productElement.getText());
+        loginPage.goToLoginPage();
+        loginPage.inputUsername("standard_user");
+        loginPage.inputPassword("secret_sauce");
+        loginPage.clickLoginButton();
     }
     public void clickMenu() {
         driver.findElement(By.id("react-burger-menu-btn")).click();
@@ -37,6 +31,7 @@ public class LogoutPage {
         driver.findElement(By.id("logout_sidebar_link")).click();
     }
     public void validateLoginPage(){
+        By userName = By.id("user-name");
         WebElement userLogin = driver.findElement(userName);
         assertTrue(userLogin.isDisplayed());
     }

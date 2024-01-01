@@ -1,4 +1,4 @@
-package com.saucedemo.pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginPage {
     WebDriver driver;
+    LoginPage loginPage;
 
     By usernameInput = By.cssSelector("input#user-name");
     By passwordInput = By.xpath("//*[@id=\"password\"]");
@@ -17,6 +18,7 @@ public class LoginPage {
     }
 
     public void goToLoginPage() {
+        loginPage = new LoginPage(driver);
         driver.get("https://www.saucedemo.com/");
 
     }
